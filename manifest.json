@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Top-3 Plugin",
+  "description": "This extension will keep you on track by making you focus on your top-3 priorties",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "three.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "storage"
+   ]
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html data-ng-app='top3'>
+  <head>
+    <title>My Top 3</title>
+
+    <link rel="stylesheet" href="style.css"></script>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+
+  <div class='today-container' data-ng-controller="todayController" >
+  	
+  	<div class='header'> {{today}} </div>
+
+    <div ng-if='!isDone'>
+
+    	<div class='sub_head'>{{ heading }}</div>
+
+      <task ng-class='task.status' ng-repeat='task in tasks track by $index' 
+      ng-click='completed(task)' >
+         <span ng-class='task.status'>{{$index + 1}}</span> {{ task.name }}
+      </task>
+
+
+      
+
+      <input ng-model='new_task.name' class="dotted" ng-if='tasks.length < 3'
+      placeholder='Add a new task' aria-label ='Add a new task' ng-enter='addTask()'></input>
+
+    </div>
+
+    <div class='success-container' ng-if='isDone'>
+          <img src='Smiley.svg.png'/>
+          <h3>Have a nice day! </h3>
+          <button ng-click=reset()>Reset</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  </body>
+</html>
