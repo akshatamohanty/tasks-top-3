@@ -34,22 +34,22 @@ app.controller('todayController',
                       }
 
                       if(flag == 1){
-                        chrome.browserAction.setIcon({   path : "two.png" })
+                        chrome.browserAction.setIcon({   path : "img/two.png" })
                       }
 
                       else if(flag == 2){
-                        chrome.browserAction.setIcon({   path : "one.png" })
+                        chrome.browserAction.setIcon({   path : "img/one.png" })
                       }
 
                       else if(flag === 3){
                         //chrome.storage.sync.clear();
-                        chrome.browserAction.setIcon({   path : "check.png" })
+                        chrome.browserAction.setIcon({   path : "img/check.png" })
                         $scope.isDone = true;
 
                       }
 
                       else{
-                        chrome.browserAction.setIcon({   path : "three.png" })
+                        chrome.browserAction.setIcon({   path : "img/three.png" })
                       }
                    
                    }
@@ -68,7 +68,7 @@ app.controller('todayController',
 
                    function refresh(){
                       
-                      chrome.browserAction.setIcon({   path : "icon.png" });
+                      chrome.browserAction.setIcon({   path : "img/three.png" });
                       chrome.storage.sync.get(function(items){
 
                           if(items[date] !== undefined){
@@ -143,7 +143,7 @@ app.controller('todayController',
                         $scope.tasks = [];
                         update();
 
-                        chrome.browserAction.setIcon({   path : "three.png" });
+                        chrome.browserAction.setIcon({   path : "img/three.png" });
 
                    }
 
